@@ -1,6 +1,6 @@
 ﻿# BrainiacBattle
 
-##Steps to set up Braniac Battle backend and database on your local machine:
+## Steps to set up Braniac Battle backend and database on your local machine:
 
 1. Pull code
 2. Download Sql Server Management Studio
