@@ -20,6 +20,7 @@ namespace Backend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSwaggerGen();
             services.AddDbContext<BraniacBattleContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("BraniacBattleDB")));
             services.AddControllers();
@@ -38,6 +39,13 @@ namespace Backend
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Braniac Battle API");
+            });
 
             app.UseEndpoints(endpoints =>
             {
