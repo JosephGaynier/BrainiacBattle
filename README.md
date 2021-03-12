@@ -6,8 +6,7 @@
 2. Download Sql Server Management Studio
 3. Paste your Sql connection string into the appsettings.json file
 4. Open Nuget Package Manager in Visual Studio
-5. Type command - Add-Migration InitialMigration
-6. Type command - Update-Database
+5. Type command - Update-Database
 
 ## View Api documentation
 
