@@ -11,4 +11,4 @@
 ## View Api documentation
 
 1. Run App in Visual Studio
-2. Navigate to localhost:{port}/swagger
+2. Navigate to localhost:{backend-port}/swagger
