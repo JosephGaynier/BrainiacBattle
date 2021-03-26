@@ -3,10 +3,7 @@
 ## Setup Braniac Battle on your local machine:
 
 1. Pull code
-2. Download Sql Server Management Studio
-3. Paste your Sql connection string into the appsettings.json file
-4. Open Nuget Package Manager in Visual Studio
-5. Type command - Update-Database
+2. Paste your Sql connection string into the appsettings.json file
 
 ## View Api documentation
 
