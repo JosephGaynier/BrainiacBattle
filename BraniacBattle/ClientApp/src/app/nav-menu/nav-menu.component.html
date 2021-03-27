@@ -19,26 +19,33 @@
         class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse"
         [ngClass]="{ show: isExpanded }"
       >
-        <app-login-menu></app-login-menu>
-        <ul class="navbar-nav flex-grow">
-          <li
-            class="nav-item"
-            [routerLinkActive]="['link-active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/counter']"
-              >Counter</a
-            >
-          </li>
-          <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/fetch-data']"
-              >Fetch data</a
-            >
-          </li>
-        </ul>
+        <!--<app-login-menu></app-login-menu>-->
+          <ul class="navbar-nav flex-grow">
+              <li class="nav-item"
+                  [routerLinkActive]="['link-active']"
+                  [routerLinkActiveOptions]="{ exact: true }">
+                  <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+              </li>
+              <li class="nav-item"
+                  [routerLinkActive]="['link-active']"
+                  [routerLinkActiveOptions]="{ exact: true }">
+                  <a class="nav-link text-dark" [routerLink]="['/games']">Games</a>
+              </li>
+              <li class="nav-item"
+                  [routerLinkActive]="['link-active']"
+                  [routerLinkActiveOptions]="{ exact: true }">
+                  <a class="nav-link text-dark" [routerLink]="['/skills']">Skills</a>
+              </li>
+              <li class="nav-item" [routerLinkActive]="['link-active']">
+                  <a class="nav-link text-dark" [routerLink]="['/user']">Account</a>
+              </li>
+              <!--<li class="nav-item" [routerLinkActive]="['link-active']">
+        <a class="nav-link text-dark" [routerLink]="['/counter']">Counter</a>
+    </li>-->
+              <li class="nav-item" [routerLinkActive]="['link-active']">
+                  <a class="nav-link text-dark" [routerLink]="['/fetch-data']">Fetch data</a>
+              </li>
+          </ul>
       </div>
     </div>
   </nav>

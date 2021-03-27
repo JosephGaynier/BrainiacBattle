@@ -41,6 +41,11 @@
     <Compile Remove="Data\Migrations\20210312213222_InitialMigration.Designer.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\games\" />
+    <Folder Include="ClientApp\src\app\skills\" />
+    <Folder Include="ClientApp\src\app\user\" />
+  </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
