@@ -19,6 +19,7 @@ namespace BrainiacBattle.Models
         public string Name { get; set; }
         public string Description { get; set; }
 
+        public virtual ICollection<AccountCategoryStatistics> AccountCategoryStatistics { get; set; }
         public virtual ICollection<Benefits> Benefits { get; set; }
         public virtual ICollection<Games> Games { get; set; }
     }

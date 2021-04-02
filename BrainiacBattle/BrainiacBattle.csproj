@@ -39,6 +39,8 @@
   <ItemGroup>
     <Compile Remove="Data\Migrations\20210312213222_InitialMigration.cs" />
     <Compile Remove="Data\Migrations\20210312213222_InitialMigration.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210402184039_Add TotalPLayingTime and StartTime for Account.cs" />
+    <Compile Remove="Data\Migrations\20210402184039_Add TotalPLayingTime and StartTime for Account.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -66,7 +68,7 @@
     <ItemGroup>
       <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
       <DistFiles Include="$(SpaRoot)node_modules\**" Condition="'$(BuildServerSideRenderer)' == 'true'" />
-      <ResolvedFileToPublish Include="@(DistFiles-&gt;'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
         <RelativePath>%(DistFiles.Identity)</RelativePath>
         <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
         <ExcludeFromSingleFile>true</ExcludeFromSingleFile>

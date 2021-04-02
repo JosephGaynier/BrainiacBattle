@@ -18,10 +18,15 @@ namespace BrainiacBattle.Models
 
         public int AccountId { get; set; }
         public string Username { get; set; }
-        public string EncryptedPassword { get; set; }
         public int BrainRating { get; set; }
+        public int? CurrentGameId { get; set; }
+        public int TotalPLayingTime { get; set; }
+        public DateTime? StartTime { get; set; }
+
+        public virtual Games Game { get; set; }
 
         public virtual ICollection<AccountGameStatistics> AccountGameStatistics { get; set; }
+        public virtual ICollection<AccountCategoryStatistics> AccountCategoryStatistics { get; set; }
         public virtual ICollection<AccountsBadges> AccountsBadges { get; set; }
         public virtual ICollection<Results> Results { get; set; }
     }

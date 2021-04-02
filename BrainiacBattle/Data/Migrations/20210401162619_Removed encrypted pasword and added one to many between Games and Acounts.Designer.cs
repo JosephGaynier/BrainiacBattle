@@ -4,45 +4,22 @@ using BrainiacBattle.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BrainiacBattle.Data.Migrations
 {
     [DbContext(typeof(BrainiacBattleContext))]
-    partial class BrainiacBattleContextModelSnapshot : ModelSnapshot
+    [Migration("20210401162619_Removed encrypted pasword and added one to many between Games and Acounts")]
+    partial class RemovedencryptedpaswordandaddedonetomanybetweenGamesandAcounts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.13")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("BrainiacBattle.Models.AccountCategoryStatistics", b =>
-                {
-                    b.Property<int>("AccountCategoryStaticId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("AccountId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CategoryRating")
-                        .HasColumnType("int");
-
-                    b.HasKey("AccountCategoryStaticId");
-
-                    b.HasIndex("AccountId");
-
-                    b.HasIndex("CategoryId");
-
-                    b.ToTable("AccountCategoryStatistics");
-                });
 
             modelBuilder.Entity("BrainiacBattle.Models.AccountGameStatistics", b =>
                 {
@@ -58,9 +35,6 @@ namespace BrainiacBattle.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("GameId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("GameRating")
                         .HasColumnType("int");
 
                     b.Property<int?>("HighestLevel")
@@ -94,13 +68,7 @@ namespace BrainiacBattle.Data.Migrations
                     b.Property<int>("BrainRating")
                         .HasColumnType("int");
 
-                    b.Property<int?>("CurrentGameId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("StartTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("TotalPLayingTime")
+                    b.Property<int>("CurrentGameId")
                         .HasColumnType("int");
 
                     b.Property<string>("Username")
@@ -601,21 +569,6 @@ namespace BrainiacBattle.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("BrainiacBattle.Models.AccountCategoryStatistics", b =>
-                {
-                    b.HasOne("BrainiacBattle.Models.Accounts", "Account")
-                        .WithMany("AccountCategoryStatistics")
-                        .HasForeignKey("AccountId")
-                        .HasConstraintName("FK_AccountCategoryStatistics_Accounts")
-                        .IsRequired();
-
-                    b.HasOne("BrainiacBattle.Models.Categories", "Category")
-                        .WithMany("AccountCategoryStatistics")
-                        .HasForeignKey("CategoryId")
-                        .HasConstraintName("FK_AccountCategoryStatistics_Games")
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("BrainiacBattle.Models.AccountGameStatistics", b =>
                 {
                     b.HasOne("BrainiacBattle.Models.Accounts", "Account")
@@ -636,7 +589,8 @@ namespace BrainiacBattle.Data.Migrations
                     b.HasOne("BrainiacBattle.Models.Games", "Game")
                         .WithMany("Accounts")
                         .HasForeignKey("CurrentGameId")
-                        .HasConstraintName("FK_Accounts_Games");
+                        .HasConstraintName("FK_Accounts_Games")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("BrainiacBattle.Models.AccountsBadges", b =>

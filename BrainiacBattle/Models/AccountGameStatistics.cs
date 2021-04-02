@@ -17,6 +17,7 @@ namespace BrainiacBattle.Models
         public int? Losses { get; set; }
         public int AccountId { get; set; }
         public int GameId { get; set; }
+        public int GameRating { get; set; }
 
         public virtual Accounts Account { get; set; }
         public virtual Games Game { get; set; }

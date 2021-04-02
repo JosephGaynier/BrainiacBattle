@@ -21,6 +21,8 @@ namespace BrainiacBattle.Services
         {
             return await _context.Accounts
                                     .Include(a => a.AccountGameStatistics)
+                                    .Include(a => a.AccountCategoryStatistics)
+                                    .Include(a => a.Game)
                                     .Include(a => a.AccountsBadges)
                                     .ThenInclude(ab => ab.Badge)
                                     .Where(a => a.AccountId == id)

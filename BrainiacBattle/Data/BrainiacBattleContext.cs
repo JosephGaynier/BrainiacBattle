@@ -21,6 +21,7 @@ namespace BrainiacBattle.Data
         }
 
         public virtual DbSet<AccountGameStatistics> AccountGameStatistics { get; set; }
+        public virtual DbSet<AccountCategoryStatistics> AccountCategoryStatistics { get; set; }
         public virtual DbSet<Accounts> Accounts { get; set; }
         public virtual DbSet<AccountsBadges> AccountsBadges { get; set; }
         public virtual DbSet<Badges> Badges { get; set; }
@@ -59,17 +60,35 @@ namespace BrainiacBattle.Data
                     .HasConstraintName("FK_AccountGameStatistics_Games");
             });
 
+            modelBuilder.Entity<AccountCategoryStatistics>(entity =>
+            {
+                entity.HasKey(e => e.AccountCategoryStaticId);
+
+                entity.HasOne(d => d.Account)
+                    .WithMany(p => p.AccountCategoryStatistics)
+                    .HasForeignKey(d => d.AccountId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_AccountCategoryStatistics_Accounts");
+
+                entity.HasOne(d => d.Category)
+                    .WithMany(p => p.AccountCategoryStatistics)
+                    .HasForeignKey(d => d.CategoryId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_AccountCategoryStatistics_Games");
+            });
+
             modelBuilder.Entity<Accounts>(entity =>
             {
                 entity.HasKey(e => e.AccountId);
 
-                entity.Property(e => e.EncryptedPassword)
-                    .IsRequired()
-                    .HasMaxLength(150);
-
                 entity.Property(e => e.Username)
                     .IsRequired()
                     .HasMaxLength(50);
+
+                entity.HasOne(d => d.Game)
+                    .WithMany(p => p.Accounts)
+                    .HasForeignKey(d => d.CurrentGameId)
+                    .HasConstraintName("FK_Accounts_Games");
             });
 
             modelBuilder.Entity<AccountsBadges>(entity =>

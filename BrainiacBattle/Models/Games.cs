@@ -23,6 +23,7 @@ namespace BrainiacBattle.Models
         public int CategoryId { get; set; }
 
         public virtual Categories Category { get; set; }
+        public virtual ICollection<Accounts> Accounts { get; set; }
         public virtual ICollection<AccountGameStatistics> AccountGameStatistics { get; set; }
         public virtual ICollection<Badges> Badges { get; set; }
         public virtual ICollection<Results> Results { get; set; }
