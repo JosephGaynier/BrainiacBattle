@@ -1,19 +1,20 @@
 .container {
-  width: 90%;
+  width: 95%;
   height: 800px;
   padding: 10px;
   margin: 20px auto;
   position: relative;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+ 
 }
 article {
   float: left;
   padding: 20px;
   width: 70%;
-  height: 400px;
-  background-color: #f1f1f1;
-  text-align:center;
+  height: 450px;
+  text-align: center;
+  margin-right: 10px;
 }
 
 /* Clear floats after the columns */
@@ -22,3 +23,4 @@ section::after {
   display: table;
   clear: both;
 }
+

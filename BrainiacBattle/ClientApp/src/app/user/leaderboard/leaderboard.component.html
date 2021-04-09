@@ -1,1 +1,21 @@
-<h1>LeaderBoard</h1>
+<div class="container">
+<h3>LeaderBoard</h3>
+<div class="row">
+    <table>
+        <tr>
+            <th>Rank</th>
+            <th>User</th>
+            <th>Score</th>
+        </tr>
+        <tbody>
+            <tr *ngFor="let row of users; index as i">
+                <td>{{i+1}}</td>
+                <td>
+                    {{row.name}}
+                </td>
+                <td>{{row.score}}</td>
+                </tr>
+</tbody>
+    </table>
+</div>
+</div>

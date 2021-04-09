@@ -52,6 +52,10 @@ import { StrategyComponent } from './skills/strategy/strategy.component';
       { path: 'games', component: gamesComponent },
       { path: 'skills', component: skillsComponent },
       { path: 'user', component: userComponent, canActivate: [AuthorizeGuard] },
+      { path: 'focus', component: FocusComponent},
+      { path: 'memory', component: MemoryComponent },
+      { path: 'reflex', component: ReflexComponent },
+      { path: 'strategy', component: StrategyComponent },
     ])
   ],
   providers: [
