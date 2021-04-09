@@ -35,8 +35,15 @@ namespace BrainiacBattle.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task AddAccountAsync(Accounts account)
+        public async Task AddAccountWithEmail(string email)
         {
+            var account = new Accounts
+            {
+                Email = email,
+                Username = email,
+                TotalPlayingTime = 0, // in minutes
+                BrainRating = 0,
+            };
             _context.Accounts.Add(account);
             await _context.SaveChangesAsync();
         }
