@@ -15,6 +15,12 @@ import { AuthorizeGuard } from 'src/api-authorization/authorize.guard';
 import { AuthorizeInterceptor } from 'src/api-authorization/authorize.interceptor';
 import { skillsComponent } from './skills/skills.component';
 import { userComponent } from './user/user.component';
+import { LeaderboardComponent } from './user/leaderboard/leaderboard.component';
+import { SettingComponent } from './user/setting/setting.component';
+import { FocusComponent } from './skills/focus/focus.component';
+import { MemoryComponent } from './skills/memory/memory.component';
+import { ReflexComponent } from './skills/reflex/reflex.component';
+import { StrategyComponent } from './skills/strategy/strategy.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +31,14 @@ import { userComponent } from './user/user.component';
     FetchDataComponent,
     gamesComponent,
     skillsComponent,
-    userComponent
+    userComponent,
+    LeaderboardComponent,
+    SettingComponent,
+    FocusComponent,
+    MemoryComponent,
+    ReflexComponent,
+    StrategyComponent
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
