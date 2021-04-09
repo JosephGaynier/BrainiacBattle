@@ -14,3 +14,67 @@ code {
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
+
+h1 {
+  font-size: 100px;
+  text-align: center;
+}
+
+.Game-Wrapper > div{
+  background:#eee;
+  padding: 1em;
+  display: grid;
+  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.game {
+  padding: 1em;
+  border: 1px solid #ddd;
+}
+
+img {
+  border-radius: 4px;
+  width: 250px;
+  padding: 2em;
+}
+
+.game-pic {
+  background: white;
+}
+
+.game-description {
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.game-pic:hover .image {
+  opacity: 0.3;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position:relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.game-pic:hover .middle {
+  opacity: 1;
+}
+
+.button1 {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px;
+}
