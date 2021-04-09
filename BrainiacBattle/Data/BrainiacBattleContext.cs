@@ -85,6 +85,11 @@ namespace BrainiacBattle.Data
                     .IsRequired()
                     .HasMaxLength(50);
 
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(50);
+                    
+
                 entity.HasOne(d => d.Game)
                     .WithMany(p => p.Accounts)
                     .HasForeignKey(d => d.CurrentGameId)

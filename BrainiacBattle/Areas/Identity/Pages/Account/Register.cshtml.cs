@@ -80,11 +80,10 @@ namespace BrainiacBattle.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = new ApplicationUser { UserName = Input.Email, Email = Input.Email };
-                var account = new Accounts { Username = Input.Email, BrainRating = 0 };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
-                    await _accountService.AddAccountAsync(account);
+                    await _accountService.AddAccountWithEmail(Input.Email);
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
