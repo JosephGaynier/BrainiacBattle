@@ -1,24 +1,3 @@
-.container {
-  width: 95%;
-  height: 800px;
-  padding: 10px;
-  margin: 20px auto;
-  position: relative;
-  text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+li a {
+  margin-right: 40px;
 }
-a{
-    margin: 20px;
-}
-li a{
-    color:white;
-}
-.nav{
-    float: right;
-}
-section::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-

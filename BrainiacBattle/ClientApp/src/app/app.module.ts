@@ -21,6 +21,7 @@ import { FocusComponent } from './skills/focus/focus.component';
 import { MemoryComponent } from './skills/memory/memory.component';
 import { ReflexComponent } from './skills/reflex/reflex.component';
 import { StrategyComponent } from './skills/strategy/strategy.component';
+import { MeditationComponent } from './games/meditation/meditation.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { StrategyComponent } from './skills/strategy/strategy.component';
     FocusComponent,
     MemoryComponent,
     ReflexComponent,
-    StrategyComponent
+    StrategyComponent,
+    MeditationComponent
 
   ],
   imports: [
@@ -56,6 +58,8 @@ import { StrategyComponent } from './skills/strategy/strategy.component';
       { path: 'memory', component: MemoryComponent },
       { path: 'reflex', component: ReflexComponent },
       { path: 'strategy', component: StrategyComponent },
+      { path: 'meditation', component: MeditationComponent },
+      { path: 'setting', component: SettingComponent },
     ])
   ],
   providers: [
