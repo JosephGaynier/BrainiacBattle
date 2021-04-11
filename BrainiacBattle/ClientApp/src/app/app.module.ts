@@ -52,7 +52,7 @@ import { MeditationComponent } from './games/meditation/meditation.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent, canActivate: [AuthorizeGuard] },
       { path: 'games', component: gamesComponent },
-      { path: 'skills', component: skillsComponent },
+      { path: 'skills', component: skillsComponent, canActivate: [AuthorizeGuard]},
       { path: 'user', component: userComponent, canActivate: [AuthorizeGuard] },
       { path: 'focus', component: FocusComponent},
       { path: 'memory', component: MemoryComponent },
